@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Projects - Telecom Engineer Portfolio</title>
+  <link rel="stylesheet" href="assets/style-portfolio.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">Your Name — Telecom Engineer</h1>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container projects">
+      <div class="section-header">
+        <h2>My Projects</h2>
+        <button id="addProjectBtn" class="btn">Add Project</button>
+      </div>
+      <p class="muted">Showcase your telecom projects. Projects are saved locally in your browser (LocalStorage).</p>
+
+      <div id="projectsGrid" class="grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© <span id="year"></span> Your Name — Telecom Engineer</div>
+  </footer>
+
+  <!-- Project Modal -->
+  <div id="projectModal" class="modal" aria-hidden="true">
+    <div class="modal-panel">
+      <button id="closeModal" class="modal-close">×</button>
+      <h4>Add New Project</h4>
+      <form id="projectForm">
+        <label>Title<input name="title" required></label>
+        <label>Description<textarea name="description" rows="4" required></textarea></label>
+        <label>Technologies (comma-separated)<input name="tech"></label>
+        <label>Project Link (optional)<input name="link" type="url"></label>
+        <label>Image (optional)<input name="image" type="file" accept="image/*"></label>
+        <div class="form-actions">
+          <button type="submit" class="btn">Save Project</button>
+          <button type="button" id="cancelBtn" class="btn outline">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="assets/portfolio.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
