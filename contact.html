@@ -54,16 +54,18 @@
       </a>
         </div>
       </div>
-    <div class="contact-form">
+ <div class="contact-form">
       <h3>Send Me a Message</h3>
-      <input type="text" placeholder="Your Name" id="name">
-      <input type="text" placeholder="Your Email" id="email">
-      <textarea placeholder="Your Message" id="message" rows="5"></textarea>
-      <button onclick="sendMessage()">Send Message</button>
-    </div>
+      <Form id="contactForm">
+        <input type="text" placeholder="Your Name" id="name" required>
+        <input type="email" placeholder="Your Email" id="email" required>
+        <textarea placeholder="Your Message" id="message" rows="5" required></textarea
+        <button type="submit" class="btn">Send Message</button>   
+      </Form>
+  </div>
   </main>
 
-  <footer class="site-footer">
+   <footer class="site-footer">
     <div class="container">© <span id="year"></span> North Star Telecom</div>
   </footer>
 
