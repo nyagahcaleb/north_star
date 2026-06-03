@@ -67,9 +67,28 @@
     <div class="container">© <span id="year"></span> North Star Telecom</div>
   </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+ <script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  emailjs.init('KNQ35WYtGns8bgIYK');
+
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const status = document.getElementById('form-status');
+    status.textContent = 'Sending...';
+
+    emailjs.sendForm('service_w34wb5v', 'template_eyhz0s7', this)
+      .then(() => {
+        status.textContent = '✅ Message sent!';
+        status.style.color = '#1fb6ff';
+        this.reset();
+      })
+      .catch(() => {
+        status.textContent = '❌ Something went wrong. Try again.';
+        status.style.color = '#ff4d4d';
+      });
+  });
+</script>
 </body>
 </html>
 </script>
